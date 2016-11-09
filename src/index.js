@@ -1,5 +1,5 @@
 import express from 'express';
-//import isNumeric from './isNumeric';
+import getShortName from './getShortName';
 
 const app = express();
 
@@ -10,22 +10,12 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', (req, res) => {
-    let result = 'ok';
-/*    if (!isNumeric(req.query.a) && !isNumeric(req.query.b)) {
-        result = '0';
-    } else if (isNumeric(req.query.a) && !isNumeric(req.query.b)) {
-        result = req.query.a;
-    } else if (!isNumeric(req.query.a) && isNumeric(req.query.b)) {
-        result = req.query.b;
-    } else if (isNumeric(req.query.a) && isNumeric(req.query.b)) {
-        result = String(parseFloat(req.query.a) + parseFloat(req.query.b));
-    }
-    res.send(`${req.query.a ? req.query.a : 0} + ${req.query.b ? req.query.b : 0} = ${result}`);
-*/
-  res.send(`Test: ${result}`);
+  console.log(req.query.fullname);
+  let result = getShortName(req.query.fullname);
+  res.send(`${result}`);
 });
 
 
 app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
+    console.log('App listening on port 3000!');
 });
