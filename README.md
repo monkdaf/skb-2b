@@ -11,35 +11,40 @@
 
  * Пример 1
 
-```?fullname=Steven Paul Jobs
+```
+?fullname=Steven Paul Jobs
 -
 Jobs S. P.
 ```
 
  * Пример 2
 
-```?fullname=Илья Валентинович Сегалович
+```
+?fullname=Илья Валентинович Сегалович
 -
 Сегалович И. В.
 ```
 
  * Пример 3
 
-```?fullname=Tinna Gunnlaugsdóttir
+```
+?fullname=Tinna Gunnlaugsdóttir
 -
 Gunnlaugsdóttir T.
 ```
 
  * Пример 4
 
-```?fullname=Four word full name
+```
+?fullname=Four word full name
 -
 Invalid fullname
 ```
 
  * Пример 5
 
-```?fullname=Putin
+```
+?fullname=Putin
 -
 Putin
 ```
