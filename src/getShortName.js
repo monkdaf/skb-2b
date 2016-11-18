@@ -9,18 +9,18 @@
 
 const getShortName = (str) => {
   let result = 'Invalid fullname';
-  if ((!str) || (str.length === 0) || (str.search(/[0-9]+/) !== -1)) {
+  if ((!str) || (str.length === 0) || (str.search(/[0-9_\/\\]+/) !== -1)) {
     return result;
   }
-  const arr = str.split(' ');
+  const arr = str.replace(/ +/g, ' ').split(' ').filter(item => item !=='');
   if ((arr.length > 0) && (arr.length <= 3)) {
     const arrReverse = arr.reverse();
     if (arr.length === 3) {
       [arrReverse[1], arrReverse[2]] = [arrReverse[2], arrReverse[1]];
     }
-    const name = arrReverse[1] ? ` ${arrReverse[1].slice(0, 1)}.` : '';
-    const surname = arrReverse[2] ? ` ${arrReverse[2].slice(0, 1)}.` : '';
-    result = `${arrReverse[0]}${name}${surname}`;
+    const name = arrReverse[1] ? ` ${arrReverse[1].slice(0, 1).toUpperCase()}.` : '';
+    const surname = arrReverse[2] ? ` ${arrReverse[2].slice(0, 1).toUpperCase()}.` : '';
+    result = `${arrReverse[0].slice(0,1).toUpperCase()}${arrReverse[0].slice(1).toLowerCase()}${name}${surname}`;
   }
   return result;
 };
